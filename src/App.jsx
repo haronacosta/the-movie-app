@@ -9,7 +9,7 @@ function App() {
 
   const apiKey = '3b5c31ed638d62a93f1bab6729057395';
 
-  const imagesUrl = 'https://image.tmdb.org/t/p/w500/';
+  const imagesUrl = 'https://image.tmdb.org/t/p/w500';
 
   const [movies, setMovies] = useState([]);
 
