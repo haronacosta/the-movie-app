@@ -1,6 +1,6 @@
 # The Movie App
 
-### [Movie's info from The Movie DB](https://www.themoviedb.org 'The Movie DB')
+#### [Movie's info from The Movie DB](https://www.themoviedb.org 'The Movie DB')
 
 ## Author
 

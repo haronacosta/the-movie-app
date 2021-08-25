@@ -2,10 +2,10 @@
 import React from 'react';
 import Image from './Image';
 
-const Movie = ({ id, title, image }) => (
+const Movie = ({ id, title, poster }) => (
   <div className="Movie">
     <div className="Movie__image">
-      <Image url={image} alt={title} />
+      <Image url={poster} alt={title} />
     </div>
     <div className="Movie__title" id={id}>
       {title}

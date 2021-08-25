@@ -1,50 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './assets/scss/app.scss';
-import Header from './componentes/layout/Header';
-// import Image from './componentes/movies/Image';
-import ListMovies from './componentes/movies/ListMovies';
+import Footer from './components/layout/Footer';
+import Header from './components/layout/Header';
+import useFetchMovies from './hooks/useFetchMovies';
+import ListMovies from './components/movies/ListMovies';
 
 function App() {
-  const apiUrl = 'https://api.themoviedb.org/3/';
+  const category = 'popular';
 
-  const apiKey = '3b5c31ed638d62a93f1bab6729057395';
-
-  const imagesUrl = 'https://image.tmdb.org/t/p/w500';
-
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    fetch(`${apiUrl}movie/popular?api_key=${apiKey}`)
-      .then((resp) => resp.json())
-      .then(({ results }) => {
-        results.forEach((movie) => {
-          fetch(`${apiUrl}movie/${movie.id}?api_key=${apiKey}&language=en-US`)
-            .then((resp) => resp.json())
-            .then((details) => {
-              setMovies((movs) => [
-                ...movs,
-                {
-                  id: movie.id,
-                  image: `${imagesUrl}${details.poster_path}`,
-                  title: movie.title,
-                },
-              ]);
-            })
-            .catch((error) => {
-              console.error(error);
-            });
-        });
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+  const { movies, loading, error } = useFetchMovies(category);
 
   return (
     <div className="App">
       <Header />
+      {loading && !error ? (
+        <div className="Loading">Loading movies...</div>
+      ) : (
+        <ListMovies movies={movies} />
+      )}
 
-      <ListMovies movies={movies} />
+      {error && <div className="error">Error, please reload</div>}
+
+      <Footer />
     </div>
   );
 }
