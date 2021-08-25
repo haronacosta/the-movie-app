@@ -82,9 +82,15 @@ body {
   position: absolute;
   text-align: center;
   width: 100%;
+  span {
+    margin-right: 0.5rem;
+  }
   a {
     color: $secondary-color;
     text-decoration: none;
+    img {
+      height: 1.2rem;
+    }
   }
 }
 
