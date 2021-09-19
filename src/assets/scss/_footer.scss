@@ -1,0 +1,27 @@
+.Footer {
+  background-color: $rich-black;
+  bottom: -4rem;
+  color: $app-background;
+  margin-top: auto;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.Footer__url {
+  color: $secondary-color;
+  text-decoration: none;
+  &:hover {
+    color: rgba($color: $secondary-color, $alpha: 0.7);
+  }
+}
+
+.Footer__text {
+  margin-right: 0.5rem;
+}
+
+.Footer__image {
+  height: 1.2rem;
+}
