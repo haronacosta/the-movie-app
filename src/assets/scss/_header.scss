@@ -46,4 +46,8 @@
   &:hover {
     color: rgba($color: $app-background, $alpha: 0.8);
   }
+
+  &.active {
+    background-color: rgba($rich-black, $alpha: 0.8);
+  }
 }
