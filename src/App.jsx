@@ -15,9 +15,9 @@ function App() {
   const location = useLocation();
 
   const [category, setCategory] = useState(
-    location.pathname.split('/')[1] === ''
+    location.pathname.split('/the-movie-app/')[1] === ''
       ? 'popular'
-      : location.pathname.split('/')[1]
+      : location.pathname.split('/the-movie-app/')[1]
   );
 
   const { movies, loading, error } = useFetchMovies(category);
@@ -31,15 +31,18 @@ function App() {
       ) : (
         <Routes>
           <Route
-            path="/"
+            path="/the-movie-app"
+            exact
             element={<ListMovies movies={movies} category={category} />}
           />
           <Route
-            path="upcoming"
+            path="/the-movie-app/upcoming"
+            exact
             element={<ListMovies movies={movies} category={category} />}
           />
           <Route
-            path="popular"
+            path="/the-movie-app/popular"
+            exact
             element={<ListMovies movies={movies} category={category} />}
           />
         </Routes>

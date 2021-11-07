@@ -7,9 +7,9 @@ const Header = ({ setCategory }) => {
 
   const getCategory = () => {
     const category =
-      location.pathname.split('/')[1] === ''
+      location.pathname.split('/the-movie-app/')[1] === ''
         ? 'popular'
-        : location.pathname.split('/')[1];
+        : location.pathname.split('/the-movie-app/')[1];
 
     return category;
   };
@@ -25,17 +25,17 @@ const Header = ({ setCategory }) => {
         <nav className="Menu">
           <ul className="Menu__items">
             <li className="Menu__item">
-              <Link className="item--btn" to="/popular">
+              <Link className="item--btn" to="/the-movie-app/popular">
                 THE MOVIE APP
               </Link>
             </li>
             <li className="Menu__item">
-              <NavLink className="item--btn" to="/popular">
+              <NavLink className="item--btn" to="/the-movie-app/popular">
                 Popular Movies
               </NavLink>
             </li>
             <li className="Menu__item">
-              <NavLink className="item--btn" to="/upcoming">
+              <NavLink className="item--btn" to="/the-movie-app/upcoming">
                 Upcoming Movies
               </NavLink>
             </li>
